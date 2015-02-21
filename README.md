@@ -22,65 +22,65 @@ It is strongly recommended the students read and understand http://docs.python.o
  
 1. Write one or more classes that define a binary tree which can be used with the following main function.
 
-import random
-import sys
+import random<br>
+import sys<br>
 
-def main( ):
-  if len(sys.argv) < 2:
-    print('Please provide the number of keys to enter.')
-    sys.exit(1)
-  s = int(sys.argv[1])
-  parts = int(s/3)
-  t = Tree( )
-  r = list(range(1,s+1))
+def main( ):<br>
+  if len(sys.argv) < 2:<br>
+    print('Please provide the number of keys to enter.')<br>
+    sys.exit(1)<br>
+  s = int(sys.argv[1])<br>
+  parts = int(s/3)<br>
+  t = Tree( )<br>
+  r = list(range(1,s+1))<br>
 
   print('Randomly inserting the numbers from 1 to {}.'.format(len(r)))
 
   random.shuffle(r)
 
-  for i in r:
-    print('inserted {}'.format(i))
-    t.insert(i)
-  f = open('a.dot', 'w')
-  writeTree(t, f)
-  f.flush( )
-  f.close( )
-  random.shuffle(r)
+  for i in r:<br>
+    print('inserted {}'.format(i))<br>
+    t.insert(i)<br>
+  f = open('a.dot', 'w')<br>
+  writeTree(t, f)<br>
+  f.flush( )<br>
+  f.close( )<br>
+  random.shuffle(r)<br>
 
-  for n in range(1, 3):
-    m = r[(n-1) * parts : (n * parts)]
-    print(len(m))
-    for i in m:
-      print('removed {}'.format(i))
-      v = t.remove(i)
-      if v:
-        print('\tcompleted.')
-      else:
-        print('\terror.')
-    c = chr(n + 97)
-    filename = str(c) + '.dot'
-    f = open(filename, 'w')
-    writeTree(t, f)
-    f.flush( )
-    f.close( )
+  for n in range(1, 3):<br>
+    m = r[(n-1) * parts : (n * parts)]<br>
+    print(len(m))<br>
+    for i in m:<br>
+      print('removed {}'.format(i))<br>
+      v = t.remove(i)<br>
+      if v:<br>
+        print('\tcompleted.')<br>
+      else:<br>
+        print('\terror.')<br>
+    c = chr(n + 97)<br>
+    filename = str(c) + '.dot'<br>
+    f = open(filename, 'w')<br>
+    writeTree(t, f)<br>
+    f.flush( )<br>
+    f.close( )<br>
 
 The output of the program is a file in DOT syntax. The output of your program must be passed to the program `dot`, part of Graph Viz, to create an visualization of your tree. An example output file is the following: 
 
-digraph BST{
-        node [fontname="Helvetica"];
-        7 -> 2;
-        2 -> 1;
-        null1 [shape=point];
-        1 -> null1;
-        null2 [shape=point];
-        1 -> null2;
-        null3 [shape=point];
-        2 -> null3;
-        7 -> 9;
-        null4 [shape=point];
-        9 -> null4;
-        null5 [shape=point];
-        9 -> null5;
+digraph BST{<br>
+        node [fontname="Helvetica"];<br>
+        7 -> 2;<br>
+        2 -> 1;<br>
+        null1 [shape=point];<br>
+        1 -> null1;<br>
+        null2 [shape=point];<br>
+        1 -> null2;<br>
+        null3 [shape=point];<br>
+        2 -> null3;<br>
+        7 -> 9;<br>
+        null4 [shape=point];<br>
+        9 -> null4;<br>
+        null5 [shape=point];<br>
+        9 -> null5;<br>
 }
 
 An example command is:<br>
