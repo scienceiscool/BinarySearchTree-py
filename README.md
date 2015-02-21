@@ -1,52 +1,88 @@
- CS223P - Python Programming
+CS223P - Python Programming
 
- Author
-	Name: Kathy Saad
- Project
-	Title: Assignment 2: Vigenere Cipher
-		   Part 1 - Cipher
-		   Part 2 - Decipher
-	Status: Working
- External Resources
-	Class notes
-	python.org
-	http://inventwithpython.com/hacking/chapter19.html
-	http://rosettacode.org/wiki/Vigen%C3%A8re_cipher#Python
-	http://web.cs.mun.ca/~michael/c/ascii-table.html
+Author Name: Kathy Saad
+Project Title: Assignment 3 - Classes - Cartesian 2D Coordinates
+Project Status: Working
+External Resources:
+- https://www.python.org/
+- https://www.google.com/
 
-*******************************************************************************************************************************************
+**********************************************************************************************************************
 
 Instructions:
 
-[[PART 1]]
-Write a program named vigenerecipher.py that takes a file name and a code word/phrase as arguments. Open the file and use the Vigenère cipher to encode the contents of the file according to the cipher. The program should output the cipher text into 'filename'-cipher.txt where 'filename' was the original file name. For example, if the file's name is message.txt the ciphered text would be saved in message-cipher.txt.
-The Vigenère cipher is a polyalphabetic substitution cipher. It is a variation of Caesar's cipher where the alphabet is shifted by a fixed number of letters. For example, if the alphabet is shifted by eight, then the unshifted alphabet (first line) will map the following letters (second line):
-	ABCDEFGHIJKLMNOPQRSTUVWXYZ
-	IJKLMNOPQRSTUVWXYZABCDEFGH
- 
-The Vigenère cipher uses 26 alphabets that are each progressive shifted from 0 to 26. The code word provides an index into which one of the shifted alphabets will be used to cipher each letter of the clear text message into cipher text. For example, the clear text is "The eagle has landed" and the code word is "lime".
-	The eagle has landed
-	lim elime lim elimel
- 
-The first letter 'T' is ciphered using the alphabet that matches 'l', which is a shift of 12 letters; 'l' is the twelfth letter of the alphabet. The next letter 'h' matches 'i' which is a shift of 9 letters, etc.
-The above text would be ciphered to:
-	Epq iloxi sie plvpio
+    Write a class that defines a two-dimensional Cartesian coordinate. Write the class such that the following Python program executes correctly. Save the class and the main function in a file named Cartesian2D.py.
 
-[[PART 2]]
-Write a program named vigeneredecipher.py that takes a file name and a code word/phrase as arguments. Open the file and use the Vigenère cipher to decode the contents of the file according to the cipher. The program should output the clear text into 'filename'-clear.txt where 'filename' was the original file name. For example if the input is message-cipher.txt the output of the program is saved in message-cipher-clear.txt.
+    The two-dimensional Cartesian coordinate and main function must all be in the same file and named cartesian_demo.py.
 
-*******************************************************************************************************************************************
+    #/usr/bin/env python3.3
+    #
+    # Your header here
+    #
 
-Run:
-	message.txt
-		The eagle has landed
+    # Two-dimensional Cartesian coordinate
+    #  class definition here
+    class Cartesian2D:
+      def __init__(self):
+        # etc.
 
-	[CIPHER]
-	python3.4 vigenerecipher.py message.txt lime
-	cat message-cipher.txt
-	--> Epq iloxi sie plvpio
+    def main( ):
+      a = Cartesian2D(2.3, 3.4)
+      b = Cartesian2D(4.5, 1.8)
+      c = Cartesian2D(8.1, 0.3)
+      print("The distance from a to b is {}".format(a.distanceTo(b)))
+      print("The distance from b to c is {}".format(b.distanceTo(c)))
+      d = a + b
+      print("a + b = ({},{})".format(d.x, d.y))
+      d = c - b
+      print("c - b = ({}, {})".format(d.x, d.y))
+      print("The length of a is {}".format(a.length()))
+      print("The length of b is {}".format(b.length()))
+      print("The length of c is {}".format(c.length()))
+      # the normalize method returns a unit length vector
+      unita = a.normalize()
+      unitb = b.normalize()
+      unitc = c.normalize()
+      print("The length of unit a is {}".format(unita.length()))
+      print("The length of unit b is {}".format(unitb.length()))
+      print("The length of unit c is {}".format(unitc.length()))
+      if a == b:
+        print('Somehow a is equal to b?')
+      else:
+        print('a is not equal to b')
+      s = 4
+      d = unita * s
+      print(d)
+      print("The length of d is {}".format(d.length()))
+      e = unitb * s
+      f = dot(a, b)
+      g = dot(unita, unitb)
+      h = dot(d, e)
+      print("dot(a, b) = {}".format(f))
+      print("dot(unita, unitb = {}".format(g))
+      print("dot(d, e) = {}".format(h))
 
-	[DECIPHER]
-	python3.4 vigeneredecipher.py message.txt lime
-	cat message-clear.txt
-	--> The eagle has landed
+
+if __name__ == "__main__":
+  main( )
+
+**********************************************************************************************************************
+
+Output:
+
+	The distance from a to b is 2.7202941017470885
+	The distance from b to c is 3.8999999999999995
+	a + b = (6.8, 5.2)
+	c - b = (3.5999999999999996, -1.5)
+	The length of a is 4.104875150354758
+	The length of b is 4.846648326421054
+	The length of c is 8.105553651663778
+	The length of unit a is 1.0
+	The length of unit b is 1.0
+	The length of unit c is 1.0
+	a is not equal to b
+	X: 2.2412374708168414, Y: 3.3131336525118527
+	The length of d is 4.0
+	dot(a, b) = 16.47
+	dot(unita, unitb) = 0.827850924612497
+	dot(d, e) = 13.245614793799952
