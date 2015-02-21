@@ -1,7 +1,7 @@
 CS223P - Python Programming
 
 Author Name: Kathy Saad<br>
-Project Title: Assignment 2: Vigenere Cipher/Decipher<br>
+Project Title: Assignment 2 - Vigenere Cipher/Decipher<br>
 Project Status: Working<br>
 External Resources:<br>
 	-Class notes<br>
