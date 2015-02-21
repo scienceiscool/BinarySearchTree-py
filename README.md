@@ -1,18 +1,16 @@
- CS223P - Python Programming
+CS223P - Python Programming
 
- Author<br>
-<t>	Name: Kathy Saad<br>
- Project<br>
-<t>	Title: Assignment 2: Vigenere Cipher<br>
-<t><t>		   Part 1 - Cipher<br>
-<t><t>		   Part 2 - Decipher<br>
-<t>	Status: Working<br>
- External Resources<br>
-<t>	Class notes<br>
-<t>	python.org<br>
-<t>	http://inventwithpython.com/hacking/chapter19.html<br>
-<t>	http://rosettacode.org/wiki/Vigen%C3%A8re_cipher#Python<br>
-<t>	http://web.cs.mun.ca/~michael/c/ascii-table.html<br>
+Author Name: Kathy Saad<br>
+Project Title: Assignment 2: Vigenere Cipher<br>
+		   |Part 1 - Cipher<br>
+		   |Part 2 - Decipher<br>
+Project Status: Working<br>
+External Resources:<br>
+	-Class notes<br>
+	-python.org<br>
+	-http://inventwithpython.com/hacking/chapter19.html<br>
+	-http://rosettacode.org/wiki/Vigen%C3%A8re_cipher#Python<br>
+	-http://web.cs.mun.ca/~michael/c/ascii-table.html<br>
 
 **********************************************************************************************************************
 
