@@ -1,18 +1,18 @@
  CS223P - Python Programming
 
  Author<br>
-	Name: Kathy Saad<br>
+<t>	Name: Kathy Saad<br>
  Project<br>
-	Title: Assignment 2: Vigenere Cipher<br>
-		   Part 1 - Cipher<br>
-		   Part 2 - Decipher<br>
-	Status: Working<br>
+<t>	Title: Assignment 2: Vigenere Cipher<br>
+<t><t>		   Part 1 - Cipher<br>
+<t><t>		   Part 2 - Decipher<br>
+<t>	Status: Working<br>
  External Resources<br>
-	Class notes<br>
-	python.org<br>
-	http://inventwithpython.com/hacking/chapter19.html<br>
-	http://rosettacode.org/wiki/Vigen%C3%A8re_cipher#Python<br>
-	http://web.cs.mun.ca/~michael/c/ascii-table.html<br>
+<t>	Class notes<br>
+<t>	python.org<br>
+<t>	http://inventwithpython.com/hacking/chapter19.html<br>
+<t>	http://rosettacode.org/wiki/Vigen%C3%A8re_cipher#Python<br>
+<t>	http://web.cs.mun.ca/~michael/c/ascii-table.html<br>
 
 **********************************************************************************************************************
 
@@ -39,7 +39,7 @@ Write a program named vigeneredecipher.py that takes a file name and a code word
 
 Run:<br>
 	message.txt<br>
-		The eagle has landed<br><br>
+		The eagle has landed<br>
 
 	[CIPHER]
 	python3.4 vigenerecipher.py message.txt lime
