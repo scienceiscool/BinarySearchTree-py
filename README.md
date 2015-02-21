@@ -12,13 +12,16 @@ External Resources:<br>
 Instructions:
 
 In all the classes for this assignment, use of the following Python language features is mandatory:
-•	Properties
-•	Slots
-•	Name implementation details (e.g. private data members) accordingly
+
+- Properties
+- Slots
+- Name implementation details (e.g. private data members) accordingly
+
 It is strongly recommended the students read and understand http://docs.python.org/py3k/reference/datamodel.html and http://www.cafepy.com/article/python_types_and_objects/python_types_and_objects.html.
  
  
-1.	Write one or more classes that define a binary tree which can be used with the following main function. 
+1. Write one or more classes that define a binary tree which can be used with the following main function.
+
 import random
 import sys
 
@@ -60,6 +63,7 @@ def main( ):
     writeTree(t, f)
     f.flush( )
     f.close( )
+
 The output of the program is a file in DOT syntax. The output of your program must be passed to the program `dot`, part of Graph Viz, to create an visualization of your tree. An example output file is the following: 
 
 digraph BST{
@@ -78,7 +82,8 @@ digraph BST{
         null5 [shape=point];
         9 -> null5;
 }
-An example command is:
+
+An example command is:<br>
 dot -Tpdf -o output.pdf input.dot
 
 *******************************************************************************************************************************************
