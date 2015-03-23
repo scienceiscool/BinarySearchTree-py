@@ -21,47 +21,47 @@ It is strongly recommended the students read and understand <http://docs.python.
 1. Write one or more classes that define a binary tree which can be used with the following main function.
 
 ```
-import random<br>
-import sys<br>
+import random
+import sys
 
-def main( ):<br>
-&nbsp;&nbsp;if len(sys.argv) < 2:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;print('Please provide the number of keys to enter.')<br>
-&nbsp;&nbsp;&nbsp;&nbsp;sys.exit(1)<br>
-&nbsp;&nbsp;s = int(sys.argv[1])<br>
-&nbsp;&nbsp;parts = int(s/3)<br>
-&nbsp;&nbsp;t = Tree( )<br>
-&nbsp;&nbsp;r = list(range(1,s+1))<br>
+def main( ):
+&nbsp;&nbsp;if len(sys.argv) < 2:
+&nbsp;&nbsp;&nbsp;&nbsp;print('Please provide the number of keys to enter.')
+&nbsp;&nbsp;&nbsp;&nbsp;sys.exit(1)
+&nbsp;&nbsp;s = int(sys.argv[1])
+&nbsp;&nbsp;parts = int(s/3)
+&nbsp;&nbsp;t = Tree( )
+&nbsp;&nbsp;r = list(range(1,s+1))
 
 &nbsp;&nbsp;print('Randomly inserting the numbers from 1 to {}.'.format(len(r)))
 
 &nbsp;&nbsp;random.shuffle(r)
 
-&nbsp;&nbsp;for i in r:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;print('inserted {}'.format(i))<br>
-&nbsp;&nbsp;&nbsp;&nbsp;t.insert(i)<br>
-&nbsp;&nbsp;f = open('a.dot', 'w')<br>
-&nbsp;&nbsp;writeTree(t, f)<br>
-&nbsp;&nbsp;f.flush( )<br>
-&nbsp;&nbsp;f.close( )<br>
-&nbsp;&nbsp;random.shuffle(r)<br>
+&nbsp;&nbsp;for i in r:
+&nbsp;&nbsp;&nbsp;&nbsp;print('inserted {}'.format(i))
+&nbsp;&nbsp;&nbsp;&nbsp;t.insert(i)
+&nbsp;&nbsp;f = open('a.dot', 'w')
+&nbsp;&nbsp;writeTree(t, f)
+&nbsp;&nbsp;f.flush( )
+&nbsp;&nbsp;f.close( )
+&nbsp;&nbsp;random.shuffle(r)
 
-&nbsp;&nbsp;for n in range(1, 3):<br>
-&nbsp;&nbsp;&nbsp;&nbsp;m = r[(n-1) * parts : (n * parts)]<br>
-&nbsp;&nbsp;&nbsp;&nbsp;print(len(m))<br>
-&nbsp;&nbsp;&nbsp;&nbsp;for i in m:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('removed {}'.format(i))<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v = t.remove(i)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if v:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('\tcompleted.')<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('\terror.')<br>
-&nbsp;&nbsp;&nbsp;&nbsp;c = chr(n + 97)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;filename = str(c) + '.dot'<br>
-&nbsp;&nbsp;&nbsp;&nbsp;f = open(filename, 'w')<br>
-&nbsp;&nbsp;&nbsp;&nbsp;writeTree(t, f)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;f.flush( )<br>
-&nbsp;&nbsp;&nbsp;&nbsp;f.close( )<br>
+&nbsp;&nbsp;for n in range(1, 3):
+&nbsp;&nbsp;&nbsp;&nbsp;m = r[(n-1) * parts : (n * parts)]
+&nbsp;&nbsp;&nbsp;&nbsp;print(len(m))
+&nbsp;&nbsp;&nbsp;&nbsp;for i in m:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('removed {}'.format(i))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v = t.remove(i)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if v:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('\tcompleted.')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('\terror.')
+&nbsp;&nbsp;&nbsp;&nbsp;c = chr(n + 97)
+&nbsp;&nbsp;&nbsp;&nbsp;filename = str(c) + '.dot'
+&nbsp;&nbsp;&nbsp;&nbsp;f = open(filename, 'w')
+&nbsp;&nbsp;&nbsp;&nbsp;writeTree(t, f)
+&nbsp;&nbsp;&nbsp;&nbsp;f.flush( )
+&nbsp;&nbsp;&nbsp;&nbsp;f.close( )
 ```
 
 The output of the program is a file in DOT syntax. The output of your program must be passed to the program 'dot', part of Graph Viz, to create an visualization of your tree. An example output file is the following: 
