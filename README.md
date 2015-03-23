@@ -25,43 +25,43 @@ import random
 import sys
 
 def main( ):
-&nbsp;&nbsp;if len(sys.argv) < 2:
-&nbsp;&nbsp;&nbsp;&nbsp;print('Please provide the number of keys to enter.')
-&nbsp;&nbsp;&nbsp;&nbsp;sys.exit(1)
-&nbsp;&nbsp;s = int(sys.argv[1])
-&nbsp;&nbsp;parts = int(s/3)
-&nbsp;&nbsp;t = Tree( )
-&nbsp;&nbsp;r = list(range(1,s+1))
+ if len(sys.argv) < 2:
+  print('Please provide the number of keys to enter.')
+  sys.exit(1)
+ s = int(sys.argv[1])
+ parts = int(s/3)
+ t = Tree( )
+ r = list(range(1,s+1))
 
-&nbsp;&nbsp;print('Randomly inserting the numbers from 1 to {}.'.format(len(r)))
+ print('Randomly inserting the numbers from 1 to {}.'.format(len(r)))
 
-&nbsp;&nbsp;random.shuffle(r)
+ random.shuffle(r)
 
-&nbsp;&nbsp;for i in r:
-&nbsp;&nbsp;&nbsp;&nbsp;print('inserted {}'.format(i))
-&nbsp;&nbsp;&nbsp;&nbsp;t.insert(i)
-&nbsp;&nbsp;f = open('a.dot', 'w')
-&nbsp;&nbsp;writeTree(t, f)
-&nbsp;&nbsp;f.flush( )
-&nbsp;&nbsp;f.close( )
-&nbsp;&nbsp;random.shuffle(r)
+ for i in r:
+  print('inserted {}'.format(i))
+  t.insert(i)
+ f = open('a.dot', 'w')
+ writeTree(t, f)
+ f.flush( )
+ f.close( )
+ random.shuffle(r)
 
-&nbsp;&nbsp;for n in range(1, 3):
-&nbsp;&nbsp;&nbsp;&nbsp;m = r[(n-1) * parts : (n * parts)]
-&nbsp;&nbsp;&nbsp;&nbsp;print(len(m))
-&nbsp;&nbsp;&nbsp;&nbsp;for i in m:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('removed {}'.format(i))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v = t.remove(i)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if v:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('\tcompleted.')
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('\terror.')
-&nbsp;&nbsp;&nbsp;&nbsp;c = chr(n + 97)
-&nbsp;&nbsp;&nbsp;&nbsp;filename = str(c) + '.dot'
-&nbsp;&nbsp;&nbsp;&nbsp;f = open(filename, 'w')
-&nbsp;&nbsp;&nbsp;&nbsp;writeTree(t, f)
-&nbsp;&nbsp;&nbsp;&nbsp;f.flush( )
-&nbsp;&nbsp;&nbsp;&nbsp;f.close( )
+ for n in range(1, 3):
+  m = r[(n-1) * parts : (n * parts)]
+  print(len(m))
+  for i in m:
+   print('removed {}'.format(i))
+   v = t.remove(i)
+   if v:
+    print('\tcompleted.')
+   else:
+    print('\terror.')
+  c = chr(n + 97)
+  filename = str(c) + '.dot'
+  f = open(filename, 'w')
+  writeTree(t, f)
+  f.flush( )
+  f.close( )
 ```
 
 The output of the program is a file in DOT syntax. The output of your program must be passed to the program 'dot', part of Graph Viz, to create an visualization of your tree. An example output file is the following: 
