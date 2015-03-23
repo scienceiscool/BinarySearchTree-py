@@ -20,6 +20,7 @@ It is strongly recommended the students read and understand <http://docs.python.
  
 1. Write one or more classes that define a binary tree which can be used with the following main function.
 
+```
 import random<br>
 import sys<br>
 
@@ -61,8 +62,9 @@ def main( ):<br>
 &nbsp;&nbsp;&nbsp;&nbsp;writeTree(t, f)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;f.flush( )<br>
 &nbsp;&nbsp;&nbsp;&nbsp;f.close( )<br>
+```
 
-The output of the program is a file in DOT syntax. The output of your program must be passed to the program `dot`, part of Graph Viz, to create an visualization of your tree. An example output file is the following: 
+The output of the program is a file in DOT syntax. The output of your program must be passed to the program 'dot', part of Graph Viz, to create an visualization of your tree. An example output file is the following: 
 
 digraph BST{<br>
 &nbsp;&nbsp;node [fontname="Helvetica"];<br>
