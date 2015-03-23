@@ -9,9 +9,7 @@ __External Resources:__<br>
 
 *******************************************************************************************************************************************
 
-__Instructions:__
-
-In all the classes for this assignment, use of the following Python language features is mandatory:
+__Instructions:__ In all the classes for this assignment, use of the following Python language features is mandatory:
 
 - Properties
 - Slots
