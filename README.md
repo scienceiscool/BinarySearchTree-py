@@ -1,15 +1,15 @@
-CS223P - Python Programming
+#CS223P - Python Programming
 
-Author Name: Kathy Saad<br>
-Project Title: Assignment 4 - More Classes - Binary Search Tree<br>
-Project Status: Working<br>
-External Resources:<br>
+__Author Name:__ Kathy Saad<br>
+__Project Title:__ Assignment 4 - More Classes - Binary Search Tree<br>
+__Project Status:__ Working<br>
+__External Resources:__<br>
 - Class notes and handouts<br>
 - https://www.python.org/
 
 *******************************************************************************************************************************************
 
-Instructions:
+__Instructions:__
 
 In all the classes for this assignment, use of the following Python language features is mandatory:
 
@@ -17,7 +17,7 @@ In all the classes for this assignment, use of the following Python language fea
 - Slots
 - Name implementation details (e.g. private data members) accordingly
 
-It is strongly recommended the students read and understand http://docs.python.org/py3k/reference/datamodel.html and http://www.cafepy.com/article/python_types_and_objects/python_types_and_objects.html.
+It is strongly recommended the students read and understand <http://docs.python.org/py3k/reference/datamodel.html> and <http://www.cafepy.com/article/python_types_and_objects/python_types_and_objects.html>.
  
  
 1. Write one or more classes that define a binary tree which can be used with the following main function.
@@ -26,71 +26,71 @@ import random<br>
 import sys<br>
 
 def main( ):<br>
-  if len(sys.argv) < 2:<br>
-    print('Please provide the number of keys to enter.')<br>
-    sys.exit(1)<br>
-  s = int(sys.argv[1])<br>
-  parts = int(s/3)<br>
-  t = Tree( )<br>
-  r = list(range(1,s+1))<br>
+&nbsp;&nbsp;if len(sys.argv) < 2:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print('Please provide the number of keys to enter.')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sys.exit(1)<br>
+&nbsp;&nbsp;s = int(sys.argv[1])<br>
+&nbsp;&nbsp;parts = int(s/3)<br>
+&nbsp;&nbsp;t = Tree( )<br>
+&nbsp;&nbsp;r = list(range(1,s+1))<br>
 
-  print('Randomly inserting the numbers from 1 to {}.'.format(len(r)))
+&nbsp;&nbsp;print('Randomly inserting the numbers from 1 to {}.'.format(len(r)))
 
-  random.shuffle(r)
+&nbsp;&nbsp;random.shuffle(r)
 
-  for i in r:<br>
-    print('inserted {}'.format(i))<br>
-    t.insert(i)<br>
-  f = open('a.dot', 'w')<br>
-  writeTree(t, f)<br>
-  f.flush( )<br>
-  f.close( )<br>
-  random.shuffle(r)<br>
+&nbsp;&nbsp;for i in r:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print('inserted {}'.format(i))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;t.insert(i)<br>
+&nbsp;&nbsp;f = open('a.dot', 'w')<br>
+&nbsp;&nbsp;writeTree(t, f)<br>
+&nbsp;&nbsp;f.flush( )<br>
+&nbsp;&nbsp;f.close( )<br>
+&nbsp;&nbsp;random.shuffle(r)<br>
 
-  for n in range(1, 3):<br>
-    m = r[(n-1) * parts : (n * parts)]<br>
-    print(len(m))<br>
-    for i in m:<br>
-      print('removed {}'.format(i))<br>
-      v = t.remove(i)<br>
-      if v:<br>
-        print('\tcompleted.')<br>
-      else:<br>
-        print('\terror.')<br>
-    c = chr(n + 97)<br>
-    filename = str(c) + '.dot'<br>
-    f = open(filename, 'w')<br>
-    writeTree(t, f)<br>
-    f.flush( )<br>
-    f.close( )<br>
+&nbsp;&nbsp;for n in range(1, 3):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;m = r[(n-1) * parts : (n * parts)]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(len(m))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;for i in m:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('removed {}'.format(i))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v = t.remove(i)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if v:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('\tcompleted.')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print('\terror.')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;c = chr(n + 97)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;filename = str(c) + '.dot'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;f = open(filename, 'w')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;writeTree(t, f)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;f.flush( )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;f.close( )<br>
 
 The output of the program is a file in DOT syntax. The output of your program must be passed to the program `dot`, part of Graph Viz, to create an visualization of your tree. An example output file is the following: 
 
 digraph BST{<br>
-        node [fontname="Helvetica"];<br>
-        7 -> 2;<br>
-        2 -> 1;<br>
-        null1 [shape=point];<br>
-        1 -> null1;<br>
-        null2 [shape=point];<br>
-        1 -> null2;<br>
-        null3 [shape=point];<br>
-        2 -> null3;<br>
-        7 -> 9;<br>
-        null4 [shape=point];<br>
-        9 -> null4;<br>
-        null5 [shape=point];<br>
-        9 -> null5;<br>
+&nbsp;&nbsp;node [fontname="Helvetica"];<br>
+&nbsp;&nbsp;7 -> 2;<br>
+&nbsp;&nbsp;2 -> 1;<br>
+&nbsp;&nbsp;null1 [shape=point];<br>
+&nbsp;&nbsp;1 -> null1;<br>
+&nbsp;&nbsp;null2 [shape=point];<br>
+&nbsp;&nbsp;1 -> null2;<br>
+&nbsp;&nbsp;null3 [shape=point];<br>
+&nbsp;&nbsp;2 -> null3;<br>
+&nbsp;&nbsp;7 -> 9;<br>
+&nbsp;&nbsp;null4 [shape=point];<br>
+&nbsp;&nbsp;9 -> null4;<br>
+&nbsp;&nbsp;null5 [shape=point];<br>
+&nbsp;&nbsp;9 -> null5;<br>
 }
 
 An example command is:<br>
-dot -Tpdf -o output.pdf input.dot
+$dot -Tpdf -o output.pdf input.dot
 
 *******************************************************************************************************************************************
 
-Sample run:
+__Sample run:__
 
-	python3.4 bst.py 10
+	$python3.4 bst.py 10
 	Randomly inserting the numbers from 1 to 10
 	Inserted 2
 	Inserted 10
@@ -194,8 +194,8 @@ Sample run:
 
 *******************************************************************************************************************************************
 
-Commands to create PDFs with GraphViz:
+__To create visual PDFs of the tree with GraphViz:__
 
-		dot -Tpdf -o a20.pdf a.dot
-		dot -Tpdf -o b20.pdf b.dot
-		dot -Tpdf -o c20.pdf c.dot
+		$dot -Tpdf -o a20.pdf a.dot
+		$dot -Tpdf -o b20.pdf b.dot
+		$dot -Tpdf -o c20.pdf c.dot
