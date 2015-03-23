@@ -20,7 +20,7 @@ It is strongly recommended the students read and understand <http://docs.python.
  
 1. Write one or more classes that define a binary tree which can be used with the following main function.
 
-```
+```python
 import random
 import sys
 
